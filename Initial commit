@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Mythbusters: Teen Edition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #1a73e8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 20px;
+    }
+    .hero {
+      background: #e8f0fe;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .quiz-section {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .quiz-section h2 {
+      margin-top: 0;
+    }
+    .question {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .feedback {
+      margin-top: 8px;
+      font-size: 0.9em;
+    }
+    .result {
+      font-weight: bold;
+      padding: 10px;
+      background: #e8f0fe;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .btn {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Legal Mythbusters: Teen Edition</h1>
+    <p>"Know the truth. Know your rights."</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#quiz">Myth Quiz</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#ask">Ask a Teen Lawyer</a>
+    <a href="#library">Myth Library</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Welcome to Legal Mythbusters: Teen Edition</h2>
+    <p>
+      An interactive online quiz site where teens test their legal knowledge by busting myths!
+    </p>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz" class="quiz-section">
+    <h2>Myth Quiz of the Week</h2>
+    <p>
+      Test your legal knowledge with our myth-busting questions. Choose the best answer for each myth and see if you're a true Mythbuster!
+    </p>
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question">
+        <h3>1. "Police need a warrant to search your school locker."</h3>
+        <label><input type="radio" name="q1" value="Busted" /> Busted</label><br />
+        <label><input type="radio" name="q1" value="Confirmed" /> Confirmed</label><br />
+        <label><input type="radio" name="q1" value="Not Sure" /> Not Sure</label>
+        <div class="feedback" id="feedback1"></div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <h3>2. "If you're under 18, you can't be sued."</h3>
+        <label><input type="radio" name="q2" value="Busted" /> Busted</label><br />
+        <label><input type="radio" name="q2" value="Confirmed" /> Confirmed</label><br />
+        <label><input type="radio" name="q2" value="Not Sure" /> Not Sure</label>
+        <div class="feedback" id="feedback2"></div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <h3>3. "Your DMs are private — even if you're being investigated."</h3>
+        <label><input type="radio" name="q3" value="Busted" /> Busted</label><br />
+        <label><input type="radio" name="q3" value="Confirmed" /> Confirmed</label><br />
+        <label><input type="radio" name="q3" value="Not Sure" /> Not Sure</label>
+        <div class="feedback" id="feedback3"></div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <h3>4. "You have to talk to the police if they ask questions."</h3>
+        <label><input type="radio" name="q4" value="Busted" /> Busted</label><br />
+        <label><input type="radio" name="q4" value="Confirmed" /> Confirmed</label><br />
+        <label><input type="radio" name="q4" value="Not Sure" /> Not Sure</label>
+        <div class="feedback" id="feedback4"></div>
+      </div>
+
+      <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+    <div id="result" class="result"></div>
+  </section>
+
+  <!-- Leaderboard Section -->
+  <section id="leaderboard">
+    <h2>Leaderboard + Points</h2>
+    <p>(Leaderboard functionality coming soon!)</p>
+  </section>
+
+  <!-- Ask a Teen Lawyer Section -->
+  <section id="ask">
+    <h2>Ask a Teen Lawyer</h2>
+    <p>
+      Have a legal myth or question? Submit it below and get expert advice!
+    </p>
+    <form id="askForm">
+      <input type="text" placeholder="Your question..." required style="width:80%; padding:8px;" />
+      <button type="submit" class="btn">Submit Question</button>
+    </form>
+    <p>(This feature is under development.)</p>
+  </section>
+
+  <!-- Myth Explainer Library Section -->
+  <section id="library">
+    <h2>Myth Explainer Library</h2>
+    <p>
+      Explore detailed explanations for busted myths with legal breakdowns, real-life case examples, and more. (Coming soon!)
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Legal Mythbusters: Teen Edition. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Quiz data: correct answers are all "Busted"
+    const correctAnswers = {
+      q1: "Busted",
+      q2: "Busted",
+      q3: "Busted",
+      q4: "Busted"
+    };
+
+    // Detailed feedback for each myth
+    const feedbackTexts = {
+      q1: "Busted: School lockers are considered school property, so they can be searched with reasonable suspicion.",
+      q2: "Busted: Minors can indeed be sued, though the legal process may be more complex.",
+      q3: "Busted: If a subpoena is issued, even private DMs can be accessed by law enforcement.",
+      q4: "Busted: You always have the right to remain silent and are not obligated to answer police questions."
+    };
+
+    function submitQuiz() {
+      let score = 0;
+      let total = Object.keys(correctAnswers).length;
+
+      // Iterate over each question
+      for (let key in correctAnswers) {
+        let radios = document.getElementsByName(key);
+        let answered = false;
+        for (let i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            answered = true;
+            let feedbackDiv = document.getElementById("feedback" + key.substring(1));
+            if (radios[i].value === correctAnswers[key]) {
+              score++;
+              feedbackDiv.innerHTML = "<span style='color: green;'>Correct! " + feedbackTexts[key] + " 😊</span>";
+            } else {
+              feedbackDiv.innerHTML = "<span style='color: red;'>Incorrect. " + feedbackTexts[key] + " 😕</span>";
+            }
+          }
+        }
+        // Prompt user if no answer was selected
+        if (!answered) {
+          let feedbackDiv = document.getElementById("feedback" + key.substring(1));
+          feedbackDiv.innerHTML = "<span style='color: orange;'>Please select an answer.</span>";
+        }
+      }
+      // Display overall score
+      document.getElementById("result").innerHTML = "You scored " + score + " out of " + total + "!";
+    }
+  </script>
+</body>
+</html>
